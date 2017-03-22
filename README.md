@@ -9,14 +9,14 @@ Version 1.0
 # API DOCUMENTATION #
 
 ### Trello.Trello ###
-public string key, token.
+public string key, token.<br/>
 Instantiates a trello link with assigned key and token.
 ```
 public Trello trello = new Trello (key, token);
 ```
 
 ### Trello.checkWwwStatus ###
-public string errorMessage, public WWW www.
+public string errorMessage, public WWW www.<br/>
 Checks and compares issue type from given IssueType.
 ```
 WWW www = new WWW(string url, WWWform form);
@@ -26,7 +26,7 @@ while(!www.isDone){
 ```
 
 ### Trello.populateBoards ###
-public JsonData boardData.
+public JsonData boardData.<br/>
 Download the list of available boards for the user.
 ```
 //Async
@@ -36,7 +36,7 @@ public IEnumerator getBoards() {
 ```
 
 ### Trello.setCurrentBoard ###
-public string name.
+public string name.<br/>
 Sets the current board.
 ```
 string boardName = "Dev Hub";
@@ -46,7 +46,7 @@ if(boardName != ""){
 ```
 
 ### Trello.populateLists ###
-public JsonData listData.
+public JsonData listData.<br/>
 Download the list of available lists for the current board.
 ```
 //Async
@@ -56,7 +56,7 @@ public IEnumerator getLists() {
 ```
 
 ### Trello.setCurrentList ###
-public string name.
+public string name.<br/>
 Sets the current list.
 ```
 //Async
@@ -70,7 +70,7 @@ public IEnumerator getLists() {
 ```
 
 ### Trello.populateCards ###
-public JsonData cardData.
+public JsonData cardData.<br/>
 Download the list of cards from current list.
 ```
 //Async
@@ -80,7 +80,7 @@ public IEnumerator getCards() {
 ```
 
 ### Trello.setCurrentCard ###
-public string name.
+public string name.<br/>
 Sets the last card created from current accessed list.
 ```
 //Async
@@ -91,9 +91,9 @@ public IEnumerator getSetCards() {
 ```
 
 ### TrelloCard ###
-public TrelloCard.
-Create a new Trello card Object.
-Uses the following fields:
+public TrelloCard.<br/>
+Create a new Trello card Object.<br/>
+Uses the following fields:<br/>
 string pos | string name | string desc | string due | string idList | string idLabels | string urlSource | string fileSource
 ```
 TrelloCard card = new TrelloCard();
@@ -105,14 +105,14 @@ card.fileSource = "MyFileUrl.png";
 ```
 
 ### Trello.newCard ###
-public TrelloCard card.
+public TrelloCard card.<br/>
 Create a new Trello card object with the correct list id populated already.
 ```
 Trello trello = new Trello(key, token);
 var card = trello.newCard();
 ```
 ### Trello.uploadCard ###
-public TrelloCard card.
+public TrelloCard card.<br/>
 Uploads a given TrelloCard object to the Trello servers.
 ```
 Trello trello = new Trello(key, token);
@@ -136,7 +136,7 @@ public IEnumerator UploadCard() {
 ```
 
 ### Trello.UploadAttachmentToCard ###
-public TrelloAttachment attachment.
+public TrelloAttachment attachment.<br/>
 Add attachment to card.
 ```
 if(hasAttachment) {
@@ -145,9 +145,9 @@ if(hasAttachment) {
 ```
 
 ### TrelloLabel ###
-public TrelloLabel.
-Create a new Trello card Label.
-Uses the following fields:
+public TrelloLabel.<br/>
+Create a new Trello card Label.<br/>
+Uses the following fields:<br/>
 string color | string name
 ```
 TrelloLabel label = new TrelloLabel();
@@ -156,7 +156,7 @@ label.name = "High Priority";
 ```
 
 ### Trello.AddLabelToCard ###
-public TrelloLabel label.
+public TrelloLabel label.<br/>
 Add label to last known card.
 ```
 Trello trello = new Trello(key, token);
@@ -178,7 +178,7 @@ void Awake() {
 ```
 
 ### SystemInformation.BuildSystemInformation ###
-public bool deviceInfo, public bool graphicsInfo, public bool processorInfo.
+public bool deviceInfo, public bool graphicsInfo, public bool processorInfo.<br/>
 Gathers and compiles a string of user system information.
 ```
 SystemInformation sysInfo = new SystemInformation();
@@ -187,7 +187,7 @@ userInfo = sysInfo.buildSystemInformation(true, true, true);
 ```
 
 ### JSON.RequestJSON ###
-public string jsonUrl.
+public string jsonUrl.<br/>
 Query a URL with extension *.json.
 ```
 JSON json = new JSON();
@@ -199,7 +199,7 @@ jsonText = json.RequestJSON(url);
 ```
 
 ### JSON.MakeJSONObject ###
-public string jsonUrl.
+public string jsonUrl.<br/>
 Query a URL with extension *.json.
 ```
 JSON json = new JSON();
