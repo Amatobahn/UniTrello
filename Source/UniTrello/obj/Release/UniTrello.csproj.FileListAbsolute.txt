@@ -1,0 +1,8 @@
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\bin\Release\UniTrello.dll
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\bin\Release\UniTrello.pdb
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\bin\Release\LitJson.dll
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\bin\Release\UnityEngine.dll
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\bin\Release\UnityEngine.xml
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\obj\Release\UniTrello.csprojResolveAssemblyReference.cache
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\obj\Release\UniTrello.dll
+F:\Dev\C#\Libraries\UniTrello\UniTrello\UniTrello\obj\Release\UniTrello.pdb
