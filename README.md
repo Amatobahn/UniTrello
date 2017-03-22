@@ -8,14 +8,14 @@ Version 1.0
 
 # API DOCUMENTATION #
 
-###Trello.Trello###
+### Trello.Trello ###
 public string key, token.
 Instantiates a trello link with assigned key and token.
 ```
 public Trello trello = new Trello (key, token);
 ```
 
-###Trello.checkWwwStatus###
+### Trello.checkWwwStatus ###
 public string errorMessage, public WWW www.
 Checks and compares issue type from given IssueType.
 ```
@@ -25,7 +25,7 @@ while(!www.isDone){
 }
 ```
 
-###Trello.populateBoards###
+### Trello.populateBoards ###
 public JsonData boardData.
 Download the list of available boards for the user.
 ```
@@ -35,7 +35,7 @@ public IEnumerator getBoards() {
 }
 ```
 
-###Trello.setCurrentBoard###
+### Trello.setCurrentBoard ###
 public string name.
 Sets the current board.
 ```
@@ -45,7 +45,7 @@ if(boardName != ""){
 }
 ```
 
-###Trello.populateLists###
+### Trello.populateLists ###
 public JsonData listData.
 Download the list of available lists for the current board.
 ```
@@ -55,7 +55,7 @@ public IEnumerator getLists() {
 }
 ```
 
-###Trello.setCurrentList###
+### Trello.setCurrentList ###
 public string name.
 Sets the current list.
 ```
@@ -69,7 +69,7 @@ public IEnumerator getLists() {
 }
 ```
 
-###Trello.populateCards###
+### Trello.populateCards ###
 public JsonData cardData.
 Download the list of cards from current list.
 ```
@@ -79,7 +79,7 @@ public IEnumerator getCards() {
 }
 ```
 
-###Trello.setCurrentCard###
+### Trello.setCurrentCard ###
 public string name.
 Sets the last card created from current accessed list.
 ```
@@ -90,7 +90,7 @@ public IEnumerator getSetCards() {
 }
 ```
 
-###TrelloCard###
+### TrelloCard ###
 public TrelloCard.
 Create a new Trello card Object.
 Uses the following fields:
@@ -104,14 +104,14 @@ card.idList = currentListId;
 card.fileSource = "MyFileUrl.png";
 ```
 
-###Trello.newCard###
+### Trello.newCard ###
 public TrelloCard card.
 Create a new Trello card object with the correct list id populated already.
 ```
 Trello trello = new Trello(key, token);
 var card = trello.newCard();
 ```
-###Trello.uploadCard###
+### Trello.uploadCard ###
 public TrelloCard card.
 Uploads a given TrelloCard object to the Trello servers.
 ```
@@ -135,7 +135,7 @@ public IEnumerator UploadCard() {
 }
 ```
 
-###Trello.UploadAttachmentToCard###
+### Trello.UploadAttachmentToCard ###
 public TrelloAttachment attachment.
 Add attachment to card.
 ```
@@ -144,7 +144,7 @@ if(hasAttachment) {
 }
 ```
 
-###TrelloLabel###
+### TrelloLabel ###
 public TrelloLabel.
 Create a new Trello card Label.
 Uses the following fields:
@@ -155,7 +155,7 @@ label.color = "Red";
 label.name = "High Priority";
 ```
 
-###Trello.AddLabelToCard###
+### Trello.AddLabelToCard ###
 public TrelloLabel label.
 Add label to last known card.
 ```
@@ -168,7 +168,7 @@ label.name = "High Priority";
 trello.AddLabelToCard(label);
 ```
 
-###Trello.InitializeExceptionHandling###
+### Trello.InitializeExceptionHandling ###
 Initialize exception handling for Trello exception cards.
 ```
 Trello trello = new Trello(key, token);
@@ -177,7 +177,7 @@ void Awake() {
 }
 ```
 
-###SystemInformation.BuildSystemInformation###
+### SystemInformation.BuildSystemInformation ###
 public bool deviceInfo, public bool graphicsInfo, public bool processorInfo.
 Gathers and compiles a string of user system information.
 ```
@@ -186,7 +186,7 @@ string userInfo = "";
 userInfo = sysInfo.buildSystemInformation(true, true, true);
 ```
 
-###JSON.RequestJSON###
+### JSON.RequestJSON ###
 public string jsonUrl.
 Query a URL with extension *.json.
 ```
@@ -198,7 +198,7 @@ string jsonText = "";
 jsonText = json.RequestJSON(url);
 ```
 
-###JSON.MakeJSONObject###
+### JSON.MakeJSONObject ###
 public string jsonUrl.
 Query a URL with extension *.json.
 ```
