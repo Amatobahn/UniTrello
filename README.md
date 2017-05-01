@@ -6,6 +6,8 @@
 Simplified user interfacing between Unity and Trello to create a cost-effective solution for managing issues and exception handling in real-time.
 Version 1.0
 
+Uses LitJson under public domain license. https://lbv.github.io/litjson/
+
 # API DOCUMENTATION #
 
 ### Trello.Trello ###
