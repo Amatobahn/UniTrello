@@ -1,46 +1,64 @@
 # UniTrello #
 
+`Version 1.0`
 
-### About: ###
+UniTrello is a simplified user interface between Unity and Trello, designed to create a cost-effective solution for managing issues and exception handling in real-time.
 
-Simplified user interfacing between Unity and Trello to create a cost-effective solution for managing issues and exception handling in real-time.
-Version 1.0
+UniTrello uses [LitJSON](https://lbv.github.io/litjson/) under a public domain license.
 
-Uses LitJson under public domain license. https://lbv.github.io/litjson/
+## API Documentation ##
 
-# API DOCUMENTATION #
+### Trello.Trello
 
-### Trello.Trello ###
-public string key, token.<br/>
-Instantiates a trello link with assigned key and token.
-```
+`public string key, token;`
+
+Instantiate a Trello link with an assigned key and token.
+
+#### Example
+
+```C#
 public Trello trello = new Trello (key, token);
 ```
 
 ### Trello.checkWwwStatus ###
-public string errorMessage, public WWW www.<br/>
-Checks and compares issue type from given IssueType.
-```
+
+`public string errorMessage, public WWW www;`
+
+Check and compare an issue type from a given IssueType.
+
+#### Example
+
+```C#
 WWW www = new WWW(string url, WWWform form);
-while(!www.isDone){
-     checkWwwStatus("Could not process Trello card", www);
+ while(!www.isDone){
+     checkWwwStatus("Could not process Trello card.", www);
 }
 ```
 
 ### Trello.populateBoards ###
-public JsonData boardData.<br/>
-Download the list of available boards for the user.
-```
+
+`public JSONData boardData;`
+
+Download a list of available boards for a user.
+
+#### Example
+
+```C#
 //Async
 public IEnumerator getBoards() {
      yield return populateBoards();
 }
 ```
 
-### Trello.setCurrentBoard ###
-public string name.<br/>
-Sets the current board.
-```
+### Trello.setCurrentBoard ### 
+
+`public string name;`
+
+Set the current board.
+
+#### Example
+
+```C#
 string boardName = "Dev Hub";
 if(boardName != ""){
      setCurrentBoard(boardName);
@@ -48,9 +66,14 @@ if(boardName != ""){
 ```
 
 ### Trello.populateLists ###
-public JsonData listData.<br/>
-Download the list of available lists for the current board.
-```
+
+`public JSONData listData;`
+
+Download available lists for the current board.
+
+#### Example
+
+```C#
 //Async
 public IEnumerator getLists() {
      yield return populateLists();
@@ -58,9 +81,14 @@ public IEnumerator getLists() {
 ```
 
 ### Trello.setCurrentList ###
-public string name.<br/>
-Sets the current list.
-```
+
+`public string name;`
+
+Set the current list.
+
+#### Example
+
+```C#
 //Async
 public IEnumerator getLists() {
      string listName = "Bugs";
@@ -72,9 +100,14 @@ public IEnumerator getLists() {
 ```
 
 ### Trello.populateCards ###
-public JsonData cardData.<br/>
-Download the list of cards from current list.
-```
+
+`public JSONData cardData;`
+
+Download a list of cards from the current list.
+
+#### Example
+
+```C#
 //Async
 public IEnumerator getCards() {
      yield return populateCards();
@@ -82,9 +115,14 @@ public IEnumerator getCards() {
 ```
 
 ### Trello.setCurrentCard ###
-public string name.<br/>
-Sets the last card created from current accessed list.
-```
+
+`public string name;`
+
+Set the last card created from a current access list.
+
+#### Example
+
+```C#
 //Async
 public IEnumerator getSetCards() {
      yield return populateCards();
@@ -93,11 +131,23 @@ public IEnumerator getSetCards() {
 ```
 
 ### TrelloCard ###
-public TrelloCard.<br/>
-Create a new Trello card Object.<br/>
-Uses the following fields:<br/>
-string pos | string name | string desc | string due | string idList | string idLabels | string urlSource | string fileSource
-```
+
+`public TrelloCard;`
+
+Create a new Trello card object. This accepts the following options:
+
+* `string.pos`
+* `string.name`
+* `string.desc`
+* `string.due`
+* `string.idList`
+* `string.idLabels`
+* `string.urlSource`
+* `string.fileSource`
+
+#### Example
+
+```C#
 TrelloCard card = new TrelloCard();
 card.pos = "top";
 card.name = "My Trello Card";
@@ -107,16 +157,27 @@ card.fileSource = "MyFileUrl.png";
 ```
 
 ### Trello.newCard ###
-public TrelloCard card.<br/>
-Create a new Trello card object with the correct list id populated already.
-```
+
+`public TrelloCard card;`
+
+Create a new Trello card object with a populated list ID.
+
+#### Example
+
+```C#
 Trello trello = new Trello(key, token);
 var card = trello.newCard();
 ```
+
 ### Trello.uploadCard ###
-public TrelloCard card.<br/>
+
+`public TrelloCard card;`
+
 Uploads a given TrelloCard object to the Trello servers.
-```
+
+#### Example
+
+```C#
 Trello trello = new Trello(key, token);
                     
 //Async
@@ -138,29 +199,45 @@ public IEnumerator UploadCard() {
 ```
 
 ### Trello.UploadAttachmentToCard ###
-public TrelloAttachment attachment.<br/>
-Add attachment to card.
-```
+
+`public TrelloAttachment attachment;`
+
+Add an attachment to a card.
+
+#### Example
+
+```C#
 if(hasAttachment) {
      trello.UploadAttachmentToCard(attachment);
 }
 ```
 
 ### TrelloLabel ###
-public TrelloLabel.<br/>
-Create a new Trello card Label.<br/>
-Uses the following fields:<br/>
-string color | string name
-```
+
+`public TrelloLabel;`
+
+Create a new Trello card label. This accepts the following options:
+
+* `string.color`
+* `string.name`
+
+#### Example
+
+```C#
 TrelloLabel label = new TrelloLabel();
 label.color = "Red";
 label.name = "High Priority";
 ```
 
 ### Trello.AddLabelToCard ###
-public TrelloLabel label.<br/>
-Add label to last known card.
-```
+
+`public TrelloLabel label;`
+
+Add a label to a last known card.
+
+#### Example
+
+```C#
 Trello trello = new Trello(key, token);
 
 TrelloLabel label = new TrelloLabel();
@@ -171,8 +248,12 @@ trello.AddLabelToCard(label);
 ```
 
 ### Trello.InitializeExceptionHandling ###
+
 Initialize exception handling for Trello exception cards.
-```
+
+#### Example
+
+```C#
 Trello trello = new Trello(key, token);
 void Awake() {
      trello.InitializeExceptionHandling();
@@ -180,18 +261,28 @@ void Awake() {
 ```
 
 ### SystemInformation.BuildSystemInformation ###
-public bool deviceInfo, public bool graphicsInfo, public bool processorInfo.<br/>
-Gathers and compiles a string of user system information.
-```
+
+`public bool deviceInfo, public bool graphicsInfo, public bool processorInfo;`
+
+Gather and compile a string of a user's system information.
+
+#### Example
+
+```C#
 SystemInformation sysInfo = new SystemInformation();
 string userInfo = "";
 userInfo = sysInfo.buildSystemInformation(true, true, true);
 ```
 
 ### JSON.RequestJSON ###
-public string jsonUrl.<br/>
-Query a URL with extension *.json.
-```
+
+`public string JSONurl;`
+
+Query a URL with the extension .json.
+
+#### Example
+
+```C#
 JSON json = new JSON();
 
 string url = "/home/config.json";
@@ -201,9 +292,14 @@ jsonText = json.RequestJSON(url);
 ```
 
 ### JSON.MakeJSONObject ###
-public string jsonUrl.<br/>
-Query a URL with extension *.json.
-```
+
+`public string JSONurl;`
+
+Query a URL with the extension .json.
+
+#### Example
+
+```C#
 JSON json = new JSON();
 
 string url = "/home/config.json";
